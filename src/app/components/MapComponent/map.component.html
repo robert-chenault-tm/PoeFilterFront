@@ -1,0 +1,33 @@
+<div class="mb-4">
+    <app-base-details (choices)="details.common=$event"></app-base-details>
+    <div class="row">
+        <div class="col-sm">
+            <label>Tier
+                <input class="form-control" [(ngModel)]="details.tier" type="text" />
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>Rarity
+                <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>
+            </label>
+        </div>
+        <div class="col-sm">
+                <label>Quality
+                    <input class="form-control" [(ngModel)]="details.quality" type="text" />
+                </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.corrupted=$event"></app-yes-no-either-dropdown> Corrupted
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.shaped=$event"></app-yes-no-either-dropdown> Shaped
+            </label>
+        </div>
+    </div>   
+    <button type="button" class="btn btn-sm basic-button" (click)="remove()"> Delete</button>
+</div>

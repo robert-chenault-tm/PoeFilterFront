@@ -1,0 +1,54 @@
+<div class="mb-4">
+    <app-base-details (choices)="details.common=$event"></app-base-details>
+    <label class="long-label">Item Type(s)
+        <input class="form-control" [(ngModel)]="details.itemType" type="text" />
+    </label>
+    <div class="row">
+        <div class="col-sm">
+            <label>Item Level
+                <input class="form-control" [(ngModel)]="details.ilvl" type="text" />
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>Rarity
+                <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.identified=$event"></app-yes-no-either-dropdown> Identified
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.corrupted=$event"></app-yes-no-either-dropdown> Corrupted
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.fractured=$event"></app-yes-no-either-dropdown> Fractured
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.shaper=$event"></app-yes-no-either-dropdown> Shaper
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.elder=$event"></app-yes-no-either-dropdown> Elder
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.synthesized=$event"></app-yes-no-either-dropdown> Synthesized
+            </label>
+        </div>
+    </div>
+    <button type="button" class="btn btn-sm basic-button" (click)="remove()"> Delete</button>
+</div>
+    

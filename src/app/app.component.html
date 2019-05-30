@@ -1,0 +1,94 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-3 mb-4 font-italic border-bottom">
+        Filter Builder
+      </h3>
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleArmor()">Armor</h2>
+        <div *ngIf="displayArmor">
+          <button type="button" class="btn btn-sm basic-button" (click)="armorEntries.push({})">Add</button>
+          <div *ngFor="let entry of armorEntries">
+            <app-armor [details]="entry" (removed)="onRemoved(armorEntries, entry)"></app-armor>
+          </div>
+        </div>
+      </div><!-- Armor Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleWeapons()">Weapons</h2>
+        <div *ngIf="displayWeapons">
+          <button type="button" class="btn btn-sm basic-button" (click)="weaponEntries.push({})">Add</button>
+          <div *ngFor="let entry of weaponEntries">
+            <app-weapon [details]="entry" (removed)="onRemoved(weaponEntries, entry)"></app-weapon>
+          </div>
+        </div>
+      </div><!-- Weapon Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleJewelry()">Jewelry</h2>
+        <div *ngIf="displayJewelry">
+          <button type="button" class="btn btn-sm basic-button" (click)="jewelryEntries.push({})">Add</button>
+          <div *ngFor="let entry of jewelryEntries">
+            <app-jewelry [details]="entry" (removed)="onRemoved(jewelryEntries, entry)"></app-jewelry>
+          </div>
+        </div>
+      </div><!-- Jewelry Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleGems()">Gems</h2>
+        <div *ngIf="displayGems">
+          <button type="button" class="btn btn-sm basic-button" (click)="gemEntries.push({})">Add</button>
+          <div *ngFor="let entry of gemEntries">
+            <app-gem [details]="entry" (removed)="onRemoved(gemEntries, entry)"></app-gem>
+          </div>
+        </div>
+      </div><!-- Gem Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleMaps()">Maps</h2>
+        <div *ngIf="displayMaps">
+          <button type="button" class="btn btn-sm basic-button" (click)="mapEntries.push({})">Add</button>
+          <div *ngFor="let entry of mapEntries">
+            <app-map [details]="entry" (removed)="onRemoved(mapEntries, entry)"></app-map>
+          </div>
+        </div>
+      </div><!-- Map Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleCurrency()">Currency/Fragments</h2>
+        <div *ngIf="displayCurrency">
+          <button type="button" class="btn btn-sm basic-button" (click)="currencyEntries.push({})">Add</button>
+          <div *ngFor="let entry of currencyEntries">
+            <app-currency [details]="entry" (removed)="onRemoved(currencyEntries, entry)"></app-currency>
+          </div>
+        </div>
+      </div><!-- Currency Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleFossils()">Fossils</h2>
+        <div *ngIf="displayFossils">
+          <button type="button" class="btn btn-sm basic-button" (click)="fossilEntries.push({})">Add</button>
+          <div *ngFor="let entry of fossilEntries">
+            <app-fossil [details]="entry" (removed)="onRemoved(fossilEntries, entry)"></app-fossil>
+          </div>
+        </div>
+      </div><!-- Fossil Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleEssences()">Essences</h2>
+        <div *ngIf="displayEssences">
+          <button type="button" class="btn btn-sm basic-button" (click)="essenceEntries.push({})">Add</button>
+          <div *ngFor="let entry of essenceEntries">
+            <app-essence [details]="entry" (removed)="onRemoved(essenceEntries, entry)"></app-essence>
+          </div>
+        </div>
+      </div><!-- Essence Section -->
+      <div class="blog-post">
+        <h2 class="blog-post-title text-white bg-secondary" (click)="toggleQuests()">Quest Items</h2>
+        <div *ngIf="displayQuests">
+          <button type="button" class="btn btn-sm basic-button" (click)="questEntries.push({})">Add</button>
+          <div *ngFor="let entry of questEntries">
+            <app-quest [details]="entry" (removed)="onRemoved(questEntries, entry)"></app-quest>
+          </div>
+        </div>
+      </div><!-- Quest Section -->
+    </div><!-- /.blog-main -->
+  </div><!-- /.row -->
+  <button type="button" class="btn btn-sm basic-button" (click)="submitToBackend()">Submit</button>
+
+</main>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+<div>
+    <label class="long-label">Description
+        <input class="form-control" [(ngModel)]="contents.description" type="text" />
+    </label>
+    <label>
+        <input [(ngModel)]="contents.hide" type="checkbox" />Hide
+    </label>
+    <div class="row">
+        <div class="col-sm">
+            <label>Font Size
+                <input class="form-control" [(ngModel)]="contents.font" type="text" placeholder="18-45" />
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>Border Color
+                <input class="form-control" [(ngModel)]="contents.border" type="text" placeholder="R G B A" />
+            </label>
+        </div>
+        <div class="col-sm">
+            <label>Background Color
+                <input class="form-control" [(ngModel)]="contents.background" type="text" placeholder="R G B A" />
+            </label>
+        </div>
+    </div>
+</div>

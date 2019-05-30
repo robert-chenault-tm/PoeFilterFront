@@ -1,0 +1,23 @@
+<div class="mb-4">
+    <app-base-details (choices)="details.common=$event"></app-base-details>
+    <div class="row">
+        <div class="col-sm">
+            <label>Level
+                <input class="form-control" [(ngModel)]="details.level" type="text" />
+            </label>
+        </div>
+        <div class="col-sm">
+                <label>Quality
+                    <input class="form-control" [(ngModel)]="details.quality" type="text" />
+                </label>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <label>
+                <app-yes-no-either-dropdown (selected)="details.corrupted=$event"></app-yes-no-either-dropdown> Corrupted
+            </label>
+        </div>
+    </div>  
+    <button type="button" class="btn btn-sm basic-button" (click)="remove()"> Delete</button>
+</div>
