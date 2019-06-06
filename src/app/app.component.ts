@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { saveAs } from 'file-saver';
+import { DeployConfigService } from './services/DeployConfig/deploy-config.service';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +18,16 @@ export class AppComponent {
   private mapEntries = [];
   private questEntries = [];
   private weaponEntries = [];
-  private displayArmor = true;
-  private displayCurrency = true;
-  private displayEssences = true;
-  private displayFossils = true;
-  private displayGems = true;
-  private displayJewelry = true;
-  private displayMaps = true;
-  private displayQuests = true;
-  private displayWeapons = true;
+  displayArmor = true;
+  displayCurrency = true;
+  displayEssences = true;
+  displayFossils = true;
+  displayGems = true;
+  displayJewelry = true;
+  displayMaps = true;
+  displayQuests = true;
+  displayWeapons = true;
+  private baseUrl: string;
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -34,34 +36,35 @@ export class AppComponent {
     })
   };
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private deployConfigService: DeployConfigService) {
+    this.baseUrl = deployConfigService.getBaseUrl();
   }
 
-  private toggleArmor() {
+  toggleArmor() {
     this.displayArmor = !this.displayArmor;
   }
-  private toggleCurrency() {
+  toggleCurrency() {
     this.displayCurrency = !this.displayCurrency;
   }
-  private toggleEssences() {
+  toggleEssences() {
     this.displayEssences = !this.displayEssences;
   }
-  private toggleFossils() {
+  toggleFossils() {
     this.displayFossils = !this.displayFossils;
   }
-  private toggleGems() {
+  toggleGems() {
     this.displayGems = !this.displayGems;
   }
-  private toggleJewelry() {
+  toggleJewelry() {
     this.displayJewelry = !this.displayJewelry;
   }
-  private toggleMaps() {
+  toggleMaps() {
     this.displayMaps = !this.displayMaps;
   }
-  private toggleQuests() {
+  toggleQuests() {
     this.displayQuests = !this.displayQuests;
   }
-  private toggleWeapons() {
+  toggleWeapons() {
     this.displayWeapons = !this.displayWeapons;
   }
 
@@ -69,7 +72,7 @@ export class AppComponent {
     entries.splice(entries.indexOf(entry), 1);
   }
 
-  private submitToBackend() {
+  submitToBackend() {
     let filter = {};
     filter['armorList'] = this.armorEntries;
     filter['currencyList'] = this.currencyEntries;
@@ -81,23 +84,9 @@ export class AppComponent {
     filter['questList'] = this.questEntries;
     filter['weaponList'] = this.weaponEntries;
 
-    //console.log(filter);
-
-    let thing = {
-      thing: 'Test successful',
-      armor: this.armorEntries
-    };
-
-    this.http.post('http://localhost:8080/generateFilter', filter, 
+    this.http.post(this.baseUrl + '/generateFilter', filter,
     {responseType: 'arraybuffer' as 'json'})
     .subscribe(response => this.downLoadFile(response, 'text/plain'));
-
-
-    // this.http.get('http://localhost:8080/').subscribe((data: any) => {
-    //   console.log(data);
-    // });
-
-
   }
 
   downLoadFile(data: any, type: string) {

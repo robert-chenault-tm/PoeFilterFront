@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class ArmorComponent implements OnInit {
 
-  @Input() details: object;
+  @Input() details: any;
   @Output() removed = new EventEmitter<boolean>();
 
   constructor() {

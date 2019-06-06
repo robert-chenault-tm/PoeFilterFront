@@ -8,8 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class RarityDropDownComponent implements OnInit {
 
 
-  private choices: string[];
-  private selectedValue: string;
+  choices: string[];
+  selectedValue: string;
   @Output() selected: EventEmitter<string>;
 
   constructor() {

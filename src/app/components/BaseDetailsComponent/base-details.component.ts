@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class BaseDetailsComponent implements OnInit{
 
-  private contents: object;
+  contents: any;
   @Output() choices: EventEmitter<object>;
 
   constructor() {

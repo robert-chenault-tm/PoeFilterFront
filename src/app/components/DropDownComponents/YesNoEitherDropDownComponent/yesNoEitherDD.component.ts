@@ -8,8 +8,8 @@ import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 export class YesNoEitherDropDownComponent implements OnInit {
 
 
-  private choices: string[];
-  private selectedValue: string;
+  choices: string[];
+  selectedValue: string;
   @Output() selected: EventEmitter<string>;
 
   constructor() {

@@ -1,0 +1,7 @@
+---
+applications:
+    -   name: chenaurj-poe-filter-front
+        memory: 1G
+        path: dist/PoeFilterFront
+        buildpacks:
+            -   staticfile_buildpack
