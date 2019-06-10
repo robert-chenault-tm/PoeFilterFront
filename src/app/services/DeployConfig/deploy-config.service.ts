@@ -14,7 +14,7 @@ export class DeployConfigService {
     this.basePCFUrl = 'https://chenaurj-poe-filter-back.cfapps.io/';
 
     // Change me
-    this.activeBaseUrl = this.basePCFUrl;
+    this.activeBaseUrl = this.baseLocalUrl;
 
   }
 

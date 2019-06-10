@@ -6,19 +6,19 @@
         <input [(ngModel)]="contents.hide" type="checkbox" />Hide
     </label>
     <div class="row">
-        <div class="col-sm">
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': font.invalid && (font.dirty || font.touched)}">
             <label>Font Size
-                <input class="form-control" [(ngModel)]="contents.font" type="text" placeholder="18-45" />
+                <input class="form-control" name="font" #font=ngModel [(ngModel)]="contents.font" type="text" [pattern]="sizeRangeRegEx" placeholder="18-45"/>
             </label>
         </div>
-        <div class="col-sm">
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': border.invalid && (border.dirty || border.touched)}">
             <label>Border Color
-                <input class="form-control" [(ngModel)]="contents.border" type="text" placeholder="R G B A" />
+                <input class="form-control" name="border" #border=ngModel [(ngModel)]="contents.border" type="text" name="border" [pattern]="colorRangeRegEx" placeholder="R G B A"/>
             </label>
         </div>
-        <div class="col-sm">
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': background.invalid && (background.dirty || background.touched)}">
             <label>Background Color
-                <input class="form-control" [(ngModel)]="contents.background" type="text" placeholder="R G B A" />
+                <input class="form-control" name="background" #background=ngModel [(ngModel)]="contents.background" type="text" [pattern]="colorRangeRegEx" placeholder="R G B A" />
             </label>
         </div>
     </div>
