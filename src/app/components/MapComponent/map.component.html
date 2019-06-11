@@ -1,9 +1,9 @@
 <div class="mb-4">
     <app-base-details (choices)="details.common=$event"></app-base-details>
     <div class="row">
-        <div class="col-sm">
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': tier.invalid && (tier.dirty || tier.touched)}">
             <label>Tier
-                <input class="form-control" [(ngModel)]="details.tier" type="text" />
+                <input class="form-control" name="tier" #tier=ngModel [(ngModel)]="details.tier" type="text" [pattern]="tierRangeRegEx" />
             </label>
         </div>
         <div class="col-sm">
@@ -11,10 +11,10 @@
                 <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>
             </label>
         </div>
-        <div class="col-sm">
-                <label>Quality
-                    <input class="form-control" [(ngModel)]="details.quality" type="text" />
-                </label>
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': quality.invalid && (quality.dirty || quality.touched)}">
+            <label>Quality
+                <input class="form-control" name="quality" #quality=ngModel [(ngModel)]="details.quality" type="text" [pattern]=qualityRangeRegEx/>
+            </label>
         </div>
     </div>
     <div class="row">

@@ -9,8 +9,10 @@ export class JewelryComponent implements OnInit {
 
   @Input() details: any;
   @Output() removed = new EventEmitter<boolean>();
+  ilvlRangeRegEx: string;
 
   constructor() {
+    this.ilvlRangeRegEx = '((<|>|=|(<|>)=) )?([0-9]|[1-9][0-9]|100)';
   }
 
   remove() {

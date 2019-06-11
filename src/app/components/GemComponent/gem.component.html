@@ -1,14 +1,14 @@
 <div class="mb-4">
     <app-base-details (choices)="details.common=$event"></app-base-details>
     <div class="row">
-        <div class="col-sm">
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': level.invalid && (level.dirty || level.touched)}">
             <label>Level
-                <input class="form-control" [(ngModel)]="details.level" type="text" />
+                <input class="form-control" name="level" #level=ngModel [(ngModel)]="details.level" type="text" [pattern]="levelRangeRegEx" />
             </label>
         </div>
-        <div class="col-sm">
+        <div [ngClass]="{'col-sm': true, 'alert alert-danger': quality.invalid && (quality.dirty || quality.touched)}">
                 <label>Quality
-                    <input class="form-control" [(ngModel)]="details.quality" type="text" />
+                    <input class="form-control" name="quality" #quality=ngModel [(ngModel)]="details.quality" type="text" [pattern]="qualityRangeRegEx" />
                 </label>
             </div>
     </div>
