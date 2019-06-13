@@ -25,6 +25,10 @@ export class WeaponComponent implements OnInit {
     this.removed.emit();
   }
 
+  onChanged(val: any, field: string) {
+    this.details[field] = val;
+  }
+
   ngOnInit(): void {
     this.details['ilvl'] = '';
     this.details['colors'] = '';

@@ -17,6 +17,7 @@ import { BaseDetailsComponent } from './components/BaseDetailsComponent/base-det
 import { GemComponent } from './components/GemComponent/gem.component';
 import { RarityDropDownComponent } from './components/DropDownComponents/RarityDropDownComponent/rarityDD.component';
 import { YesNoEitherDropDownComponent } from './components/DropDownComponents/YesNoEitherDropDownComponent/yesNoEitherDD.component';
+import { WidthComponent } from './components/FieldComponents/WidthComponent/width.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { YesNoEitherDropDownComponent } from './components/DropDownComponents/Ye
     QuestComponent,
     RarityDropDownComponent,
     WeaponComponent,
+    WidthComponent,
     YesNoEitherDropDownComponent
   ],
   imports: [

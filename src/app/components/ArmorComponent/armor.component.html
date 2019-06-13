@@ -23,11 +23,7 @@
         </div>
     </div>
     <div class="row">
-        <div [ngClass]="{'col-sm': true, 'alert alert-danger': width.invalid && (width.dirty || width.touched)}">
-            <label>Width
-                <input class="form-control" name="width" #width=ngModel [(ngModel)]="details.width" type="text" [pattern]="widthRangeRegEx" />
-            </label>
-        </div>
+        <app-width (toParent)="onChanged($event, 'width')"></app-width>
         <div [ngClass]="{'col-sm': true, 'alert alert-danger': height.invalid && (height.dirty || height.touched)}">
             <label>Height
                 <input class="form-control" name="height" #height=ngModel [(ngModel)]="details.height" type="text" [pattern]="heightRangeRegEx" />
