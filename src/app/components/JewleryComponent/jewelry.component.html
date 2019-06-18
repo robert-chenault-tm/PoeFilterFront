@@ -4,11 +4,7 @@
         <input class="form-control" [(ngModel)]="details.itemType" type="text" />
     </label>
     <div class="row">
-        <div [ngClass]="{'col-sm': true, 'alert alert-danger': ilvl.invalid && (ilvl.dirty || ilvl.touched)}">
-            <label>Item Level
-                <input class="form-control" name="ilvl" #ilvl=ngModel [(ngModel)]="details.ilvl" type="text" [pattern]="ilvlRangeRegEx"/>
-            </label>
-        </div>
+        <app-ilvl (toParent)="onChanged($event, 'ilvl')"></app-ilvl>
         <div class="col-sm">
             <label>Rarity
                 <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>

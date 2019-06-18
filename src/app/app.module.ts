@@ -18,20 +18,32 @@ import { GemComponent } from './components/GemComponent/gem.component';
 import { RarityDropDownComponent } from './components/DropDownComponents/RarityDropDownComponent/rarityDD.component';
 import { YesNoEitherDropDownComponent } from './components/DropDownComponents/YesNoEitherDropDownComponent/yesNoEitherDD.component';
 import { WidthComponent } from './components/FieldComponents/WidthComponent/width.component';
+import { HeightComponent } from './components/FieldComponents/HeightComponent/height.component';
+import { ColorsComponent } from './components/FieldComponents/ColorsComponent/colors.component';
+import { IlvlComponent } from './components/FieldComponents/IlvlComponent/ilvl.component';
+import { LevelComponent } from './components/FieldComponents/LevelComponent/level.component';
+import { QualityComponent } from './components/FieldComponents/QualityComponent/quality.component';
+import { TierComponent } from './components/FieldComponents/TierComponent/tier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArmorComponent,
     BaseDetailsComponent,
+    ColorsComponent,
     CurrencyComponent,
     EssenceComponent,
     FossilComponent,
     GemComponent,
+    HeightComponent,
+    IlvlComponent,
     JewelryComponent,
+    LevelComponent,
     MapComponent,
+    QualityComponent,
     QuestComponent,
     RarityDropDownComponent,
+    TierComponent,
     WeaponComponent,
     WidthComponent,
     YesNoEitherDropDownComponent

@@ -9,17 +9,19 @@ export class MapComponent implements OnInit {
 
   @Input() details: any;
   @Output() removed = new EventEmitter<boolean>();
-  tierRangeRegEx: string;
-  qualityRangeRegEx: string;
 
   constructor() {
-    this.tierRangeRegEx = '((<|>|=|(<|>)=) )?([1-9]|1[0-7])';
-    this.qualityRangeRegEx = '((<|>|=|(<|>)=) )?([0-9]|1[0-9]|20)';
+
   }
 
   remove() {
     this.removed.emit();
   }
+
+  onChanged(val: any, field: string) {
+    this.details[field] = val;
+  }
+
   ngOnInit(): void {
     this.details['tier'] = '';
     this.details['quality'] = '';

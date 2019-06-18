@@ -1,0 +1,5 @@
+<div [ngClass]="{'col-sm': true, 'alert alert-danger': range.invalid && (range.dirty || range.touched)}">
+    <label>Item Level
+        <input class="form-control" (change)="updateVal()" name="range" #range=ngModel [(ngModel)]="val" type="text" [pattern]="rangeRegEx" />
+    </label>
+</div>
