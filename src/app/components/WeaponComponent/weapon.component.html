@@ -4,7 +4,7 @@
         <input class="form-control" [(ngModel)]="details.itemType" type="text" />
     </label>
     <div class="row">
-        <app-ilvl (toParent)="onChanged($event, 'ilvl')"></app-ilvl>
+        <app-field (toParent)="onChanged($event, 'ilvl')" title="Item Level" [rangeRegEx]="ilvlRangeRegEx"></app-field>
     </div>
     <div class="row">
         <div class="col-sm">
@@ -12,11 +12,11 @@
                 <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>
             </label>
         </div>
-        <app-colors (toParent)="onChanged($event, 'colors')"></app-colors>
+        <app-field (toParent)="onChanged($event, 'colors')" title="Colors" [rangeRegEx]="colorsRangeRegEx" maxlength="6"></app-field>
     </div>
     <div class="row">
-        <app-width (toParent)="onChanged($event, 'width')"></app-width>
-        <app-height (toParent)="onChanged($event, 'height')"></app-height>
+        <app-field (toParent)="onChanged($event, 'width')" title="Width" [rangeRegEx]="widthRangeRegEx"></app-field>
+        <app-field (toParent)="onChanged($event, 'height')" title="Height" [rangeRegEx]="heightRangeRegEx"></app-field>
     </div>
     <div class="row">
         <div class="col-sm">

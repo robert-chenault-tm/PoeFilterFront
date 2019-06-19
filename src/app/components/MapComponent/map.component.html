@@ -1,13 +1,13 @@
 <div class="mb-4">
     <app-base-details (choices)="details.common=$event"></app-base-details>
     <div class="row">
-        <app-tier (toParent)="onChanged($event, 'tier')"></app-tier>
+            <app-field (toParent)="onChanged($event, 'tier')" title="Tier" [rangeRegEx]="tierRangeRegEx"></app-field>
         <div class="col-sm">
             <label>Rarity
                 <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>
             </label>
         </div>
-        <app-quality (toParent)="onChanged($event, 'quality')"></app-quality>
+        <app-field (toParent)="onChanged($event, 'quality')" title="Quality" [rangeRegEx]="qualityRangeRegEx"></app-field>
     </div>
     <div class="row">
         <div class="col-sm">

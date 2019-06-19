@@ -9,9 +9,12 @@ export class MapComponent implements OnInit {
 
   @Input() details: any;
   @Output() removed = new EventEmitter<boolean>();
+  qualityRangeRegEx: string;
+  tierRangeRegEx: string;
 
   constructor() {
-
+    this.qualityRangeRegEx = '((<|>|=|(<|>)=) )?([0-9]|1[0-9]|20)';
+    this.tierRangeRegEx = '((<|>|=|(<|>)=) )?([1-9]|1[0-7])';
   }
 
   remove() {

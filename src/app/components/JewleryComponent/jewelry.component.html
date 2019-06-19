@@ -4,7 +4,7 @@
         <input class="form-control" [(ngModel)]="details.itemType" type="text" />
     </label>
     <div class="row">
-        <app-ilvl (toParent)="onChanged($event, 'ilvl')"></app-ilvl>
+        <app-field (toParent)="onChanged($event, 'ilvl')" title="Item Level" [rangeRegEx]="ilvlRangeRegEx"></app-field>
         <div class="col-sm">
             <label>Rarity
                 <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>

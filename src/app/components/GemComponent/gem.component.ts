@@ -9,9 +9,12 @@ export class GemComponent implements OnInit {
 
   @Input() details: any;
   @Output() removed = new EventEmitter<boolean>();
+  levelRangeRegEx: string;
+  qualityRangeRegEx: string;
 
   constructor() {
-
+    this.levelRangeRegEx = '((<|>|=|(<|>)=) )?([1-9]|1[0-9]|2[0-1])';
+    this.qualityRangeRegEx = '((<|>|=|(<|>)=) )?([0-9]|1[0-9]|20)';
   }
 
   onChanged(val: any, field: string) {

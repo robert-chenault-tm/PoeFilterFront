@@ -9,9 +9,16 @@ export class WeaponComponent implements OnInit {
 
   @Input() details: any;
   @Output() removed = new EventEmitter<boolean>();
+  ilvlRangeRegEx: string;
+  widthRangeRegEx: string;
+  heightRangeRegEx: string;
+  colorsRangeRegEx: string;
 
   constructor() {
-
+    this.ilvlRangeRegEx = '((<|>|=|(<|>)=) )?([0-9]|[1-9][0-9]|100)';
+    this.widthRangeRegEx = '((<|>|=|(<|>)=) )?([1-2])';
+    this.heightRangeRegEx = '((<|>|=|(<|>)=) )?([1-4])';
+    this.colorsRangeRegEx = '(R*|G*|B*|W*)*';
   }
 
   remove() {

@@ -1,8 +1,8 @@
 <div class="mb-4">
     <app-base-details (choices)="details.common=$event"></app-base-details>
     <div class="row">
-        <app-level (toParent)="onChanged($event, 'level')"></app-level>
-        <app-quality (toParent)="onChanged($event, 'quality')"></app-quality>
+        <app-field (toParent)="onChanged($event, 'level')" title="Gem Level" [rangeRegEx]="levelRangeRegEx"></app-field>
+        <app-field (toParent)="onChanged($event, 'quality')" title="Quality" [rangeRegEx]="qualityRangeRegEx"></app-field>
     </div>
     <div class="row">
         <div class="col-sm">
