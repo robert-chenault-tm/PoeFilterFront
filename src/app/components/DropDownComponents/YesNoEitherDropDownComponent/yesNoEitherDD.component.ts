@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-yes-no-either-dropdown',
@@ -11,6 +11,7 @@ export class YesNoEitherDropDownComponent implements OnInit {
   choices: string[];
   selectedValue: string;
   @Output() selected: EventEmitter<string>;
+  @Input() title: string;
 
   constructor() {
     this.choices = ['Either', 'Yes', 'No'];

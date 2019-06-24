@@ -10,16 +10,8 @@
         <app-field (toParent)="onChanged($event, 'quality')" title="Quality" [rangeRegEx]="qualityRangeRegEx"></app-field>
     </div>
     <div class="row">
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.corrupted=$event"></app-yes-no-either-dropdown> Corrupted
-            </label>
-        </div>
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.shaped=$event"></app-yes-no-either-dropdown> Shaped
-            </label>
-        </div>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.corrupted=$event" title="Corrupted"></app-yes-no-either-dropdown>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.shaped=$event" title="Shaped"></app-yes-no-either-dropdown>
     </div>   
-    <button type="button" class="btn btn-sm basic-button" (click)="remove()"> Delete</button>
+    <button type="button" class="btn btn-sm basic-button" (click)="remove()">Delete</button>
 </div>

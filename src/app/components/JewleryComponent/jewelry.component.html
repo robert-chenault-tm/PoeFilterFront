@@ -5,46 +5,20 @@
     </label>
     <div class="row">
         <app-field (toParent)="onChanged($event, 'ilvl')" title="Item Level" [rangeRegEx]="ilvlRangeRegEx"></app-field>
-        <div class="col-sm">
-            <label>Rarity
-                <app-rarity-dropdown (selected)="details.rarity=$event"></app-rarity-dropdown>
-            </label>
-        </div>
     </div>
     <div class="row">
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.identified=$event"></app-yes-no-either-dropdown> Identified
-            </label>
-        </div>
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.corrupted=$event"></app-yes-no-either-dropdown> Corrupted
-            </label>
-        </div>
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.fractured=$event"></app-yes-no-either-dropdown> Fractured
-            </label>
-        </div>
+        <app-rarity-dropdown class="col-sm" (selected)="details.rarity=$event" title="Rarity"></app-rarity-dropdown>
     </div>
     <div class="row">
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.shaper=$event"></app-yes-no-either-dropdown> Shaper
-            </label>
-        </div>
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.elder=$event"></app-yes-no-either-dropdown> Elder
-            </label>
-        </div>
-        <div class="col-sm">
-            <label>
-                <app-yes-no-either-dropdown (selected)="details.synthesized=$event"></app-yes-no-either-dropdown> Synthesized
-            </label>
-        </div>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.identified=$event" title="Identified"></app-yes-no-either-dropdown>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.corrupted=$event" title="Corrupted"></app-yes-no-either-dropdown>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.fractured=$event" title="Fractured"></app-yes-no-either-dropdown>
     </div>
-    <button type="button" class="btn btn-sm basic-button" (click)="remove()"> Delete</button>
+    <div class="row">
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.shaper=$event" title="Shaper"></app-yes-no-either-dropdown>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.elder=$event" title="Elder"></app-yes-no-either-dropdown>
+        <app-yes-no-either-dropdown class="col-sm" (selected)="details.synthesized=$event" title="Synthesized"></app-yes-no-either-dropdown>
+    </div>
+    <button type="button" class="btn btn-sm basic-button" (click)="remove()">Delete</button>
 </div>
     

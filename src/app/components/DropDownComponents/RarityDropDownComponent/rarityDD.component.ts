@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rarity-dropdown',
@@ -11,6 +11,7 @@ export class RarityDropDownComponent implements OnInit {
   choices: string[];
   selectedValue: string;
   @Output() selected: EventEmitter<string>;
+  @Input() title: string;
 
   constructor() {
     this.choices = ['Any', 'Normal', 'Magic', 'Rare', 'Unique', 'Non-Unique'];

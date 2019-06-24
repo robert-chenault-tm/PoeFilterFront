@@ -1,3 +1,8 @@
-<select [(ngModel)]="selectedValue" (change)="choose()">
-    <option *ngFor="let choice of choices">{{choice}}</option>
-</select>
+<div>
+    <label>
+        <select [(ngModel)]="selectedValue" (change)="choose()">
+            <option *ngFor="let choice of choices">{{choice}}</option>
+        </select>
+        {{title}}
+    </label>
+</div>
